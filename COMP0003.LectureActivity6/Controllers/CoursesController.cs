@@ -39,6 +39,12 @@ namespace COMP0003.LectureActivity6.Controllers
             {
                 return NotFound();
             }
+            // Get the students enrolled in the course
+            ViewBag.Students = from s in _context.Students
+                               join e in _context.Enrollments on s.StudentId equals e.StudentId
+                               join c in _context.Courses on e.CourseId equals c.CourseId
+                               where c.CourseId == id
+                               select course;
 
             return View(course);
         }
