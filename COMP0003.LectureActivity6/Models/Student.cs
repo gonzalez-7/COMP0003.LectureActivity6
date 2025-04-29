@@ -13,5 +13,6 @@ namespace COMP0003.LectureActivity6.Models
 		//Collection navigation property
 
 		public virtual ICollection<Enrollment>? Enrollments { get; set; }
+		public int Age { get; set; } // New property added
 	}
 }
